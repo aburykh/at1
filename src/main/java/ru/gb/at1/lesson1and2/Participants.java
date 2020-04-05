@@ -1,3 +1,5 @@
+package ru.gb.at1.lesson1and2;
+
 /**
  * 1. Создайте три класса Человек, Кот, Робот, которые не наследуются от одного класса.
  * Эти классы должны уметь бегать и прыгать (методы просто выводят информацию о действии в консоль).
@@ -11,25 +13,11 @@
  */
 
 
-public class Wall implements Obstacles {
+public interface Participants {
 
-    String name;
-    float height;
+    String getName();
+    String getSimpleName();
+    boolean jump(Wall wall);
+    boolean run(RunnigTrack runnigTrack);
 
-    public Wall(String name, float height) {
-        this.name = name;
-        this.height = height;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public float getProp() {
-        return height;
-    }
-
-    public boolean passing(Participants participants) {
-        return participants.jump(this);
-    }
 }

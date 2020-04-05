@@ -1,3 +1,5 @@
+package ru.gb.at1.lesson1and2;
+
 /**
  * 1. Создайте три класса Человек, Кот, Робот, которые не наследуются от одного класса.
  * Эти классы должны уметь бегать и прыгать (методы просто выводят информацию о действии в консоль).
@@ -11,9 +13,30 @@
  */
 
 
-public interface Participants {
+public class RunnigTrack implements Obstacles {
 
-    String getName();
-    boolean jump(Wall wall);
-    boolean run(RunnigTrack runnigTrack);
+    String name;
+    int length;
+
+    public RunnigTrack(String name, int length) {
+        this.name = name;
+        this.length = length;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSimpleName() {
+        return getClass().getSimpleName();
+    }
+
+    public float getProp() {
+        return length;
+    }
+
+    public boolean passing(Participants participants) {
+        return participants.run(this);
+    }
+
 }

@@ -1,3 +1,5 @@
+package ru.gb.at1.lesson1and2;
+
 /**
  * 1. Создайте три класса Человек, Кот, Робот, которые не наследуются от одного класса.
  * Эти классы должны уметь бегать и прыгать (методы просто выводят информацию о действии в консоль).
@@ -11,13 +13,13 @@
  */
 
 
-public class Human implements Participants {
+public class Cat implements Participants {
 
     String name;
     int runDist;
     float jumpHeight;
 
-    public Human(String name, int runDist, float jumpHeight) {
+    public Cat(String name, int runDist, float jumpHeight) {
         this.name = name;
         this.runDist = runDist;
         this.jumpHeight = jumpHeight;
@@ -41,10 +43,14 @@ public class Human implements Participants {
             System.out.println(this.name + " не может так высоко прыгнуть (" + wall.height + "м)");
             return false;
         }
-
     }
 
     public String getName() {
         return name;
     }
+
+    public String getSimpleName() {
+        return getClass().getSimpleName();
+    }
+
 }

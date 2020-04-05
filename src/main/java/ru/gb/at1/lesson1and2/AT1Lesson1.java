@@ -1,3 +1,5 @@
+package ru.gb.at1.lesson1and2;
+
 /**
  * 1. Создайте три класса Человек, Кот, Робот, которые не наследуются от одного класса.
  * Эти классы должны уметь бегать и прыгать (методы просто выводят информацию о действии в консоль).
@@ -36,7 +38,7 @@ public class AT1Lesson1 {
         Obstacles[] obstArr = {runnigTrack1, wall1, runnigTrack2, wall2, runnigTrack3, wall3};
         System.out.println("\nПОЛОСА ПРЕПЯТСТВИЙ:");
         for (Obstacles obstacles : obstArr) {
-            System.out.println(obstacles.getClass().getName() + ": " + obstacles.getName() + " - " + obstacles.getProp() + "м");
+            System.out.println(obstacles.getSimpleName() + ": " + obstacles.getName() + " - " + obstacles.getProp() + "м");
         }
         System.out.println("========================================");
 
@@ -55,17 +57,14 @@ public class AT1Lesson1 {
  */
         outer:
         for (Participants participants : partArr) {
-            System.out.println("\nУчастник: " + participants.getClass().getName() + " " + participants.getName());
+            System.out.println("\nУчастник: " + participants.getSimpleName() + " " + participants.getName());
             for (Obstacles obstacles : obstArr) {
                 if (!obstacles.passing(participants)) {
-                    System.out.println("\nУчастник: " + participants.getClass().getName() + " " + participants.getName() + " сошёл с дистанции\n========================================");
+                    System.out.println("\nУчастник: " + participants.getSimpleName() + " " + participants.getName() + " сошёл с дистанции\n========================================");
                     continue outer;
                 }
             }
-            System.out.println("\nУчастник: " + participants.getClass().getName() + " " + participants.getName() + " успешно прошёл полосу препятсвий!!!\n========================================");
+            System.out.println("\nУчастник: " + participants.getSimpleName() + " " + participants.getName() + " успешно прошёл полосу препятсвий!!!\n========================================");
         }
     }
 }
-
-
-
